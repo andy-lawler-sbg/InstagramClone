@@ -4,6 +4,6 @@ Only tested on iOS currently. Posts can be added via connecting a user with a us
 
 ## How it looks
 
-![Example One](./Image1.png)
+![Example One](./image1.png)
 
-![Example Two](./Image2.png)
+![Example One](./image2.png)
