@@ -1,4 +1,4 @@
-import {View, Text} from 'react-native';
+import {View, Text, Image} from 'react-native';
 import styles from './PostFooter.styles';
 import AccountName from '../AccountName/AccountName';
 import AccountImage from '../AccountImage/AccountImage';
@@ -19,11 +19,32 @@ const PostFooter = ({
     <>
       <View style={styles.footerActionsContainer}>
         <View style={styles.reactionContainer}>
-          <View style={styles.reactionButton} />
-          <View style={styles.reactionButton} />
-          <View style={styles.reactionButton} />
+          <Image
+            source={require('../../assets/heart-outline.png')}
+            style={styles.reactionButton}
+          />
+          <Image
+            source={require('../../assets/chat-outline.png')}
+            style={[styles.reactionButton, {transform: [{scaleX: -1}]}]}
+          />
+          <Image
+            source={require('../../assets/send-variant-outline.png')}
+            style={[
+              styles.reactionButton,
+              {
+                transform: [
+                  {rotate: '340deg'},
+                  {translateY: -3},
+                  {translateX: 3},
+                ],
+              },
+            ]}
+          />
         </View>
-        <View style={styles.saveButton} />
+        <Image
+          source={require('../../assets/bookmark-outline.png')}
+          style={styles.saveButton}
+        />
       </View>
       <View style={styles.container}>
         <Text style={postHeaderStyles.accountText}>

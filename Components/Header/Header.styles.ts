@@ -7,21 +7,19 @@ export default StyleSheet.create({
     marginBottom: 10,
   },
   icon: {
-    height: 30,
-    width: 60,
-    borderRadius: 15,
-    backgroundColor: 'black',
-    marginLeft: 20,
+    maxHeight: 50,
+    width: 140,
+    marginLeft: 10,
   },
   buttonContainer: {
     flexDirection: 'row',
     marginRight: 20,
+    gap: 10,
   },
   button: {
     height: 30,
     width: 30,
     borderRadius: 15,
-    backgroundColor: 'black',
     marginHorizontal: 5,
   },
 });

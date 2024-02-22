@@ -1,6 +1,7 @@
 import {UserProps} from '../../types/User.types';
 
 export type PostProps = {
+  id: number;
   user: UserProps;
   likeCount: number;
   commentCount: number;

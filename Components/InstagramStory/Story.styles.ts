@@ -16,8 +16,8 @@ export default StyleSheet.create({
     backgroundColor: '#d3d3d3',
   },
   colouredBorder: {
-    borderWidth: 3,
-    borderColor: 'red',
+    borderWidth: 2,
+    borderColor: '#e3a81e',
   },
   greyText: {
     color: 'grey',
