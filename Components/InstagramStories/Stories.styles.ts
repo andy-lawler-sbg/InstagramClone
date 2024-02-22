@@ -1,9 +1,12 @@
 import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
+  scrollView: {
+    maxHeight: 110,
+  },
   container: {
-    aspectRatio: 1,
-    maxHeight: 400,
-    minWidth: '100%',
+    paddingLeft: 20,
+    flexDirection: 'row',
+    gap: 20,
   },
 });

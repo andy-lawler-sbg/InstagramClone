@@ -2,10 +2,12 @@ import {UserProps} from '../../types/User.types';
 
 export type PostProps = {
   user: UserProps;
-  daysSince: number;
+  likeCount: number;
   commentCount: number;
   location: string;
   imageUri: string;
   description: string;
   hashtag: string;
+  daysSince: number;
+  suggested: boolean;
 };

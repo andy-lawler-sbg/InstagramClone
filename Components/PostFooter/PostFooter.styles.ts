@@ -1,8 +1,33 @@
 import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
+  footerActionsContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 10,
+  },
+  reactionContainer: {
+    flexDirection: 'row',
+  },
+  reactionButton: {
+    height: 30,
+    width: 30,
+    borderRadius: 15,
+    backgroundColor: 'black',
+    marginHorizontal: 5,
+  },
+  saveButton: {
+    height: 30,
+    width: 30,
+    borderRadius: 15,
+    backgroundColor: 'red',
+    marginHorizontal: 10,
+    justifyContent: 'flex-start',
+  },
   container: {
     margin: 10,
+    spacing: 10,
+    gap: 4,
   },
   postCommentContainer: {
     flexDirection: 'row',
@@ -14,13 +39,11 @@ export default StyleSheet.create({
     color: 'blue',
   },
   viewAllCommentsButton: {
-    marginTop: 5,
     color: 'gray',
   },
   addACommentContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginTop: 15,
   },
   accountImage: {
     height: 20,
@@ -32,8 +55,6 @@ export default StyleSheet.create({
     paddingLeft: 5,
   },
   timeSinceText: {
-    fontSize: 10,
     color: 'gray',
-    marginTop: 5,
   },
 });

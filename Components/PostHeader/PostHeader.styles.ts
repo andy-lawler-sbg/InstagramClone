@@ -5,7 +5,9 @@ export default StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    margin: 7.5,
+    marginHorizontal: 10,
+    marginBottom: 10,
+    marginTop: 5,
   },
   imageAndDetailsContainer: {
     flexDirection: 'row',
@@ -32,5 +34,19 @@ export default StyleSheet.create({
   },
   editIcon: {
     fontWeight: 'bold',
+  },
+  trailingActionsContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+  },
+  followButton: {
+    paddingVertical: 5,
+    paddingHorizontal: 8,
+    backgroundColor: '#d3d3d3',
+    borderRadius: 6,
+    marginRight: 10,
+  },
+  followButtonText: {
+    fontWeight: '500',
   },
 });

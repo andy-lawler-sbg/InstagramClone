@@ -6,4 +6,5 @@ export type PostFooterProps = {
   user: UserProps;
   daysSince: number;
   commentCount: number;
+  likeCount: number;
 };

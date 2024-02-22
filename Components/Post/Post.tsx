@@ -9,11 +9,13 @@ const Post = ({
   imageUri,
   description,
   hashtag,
-  daysSince,
-  commentCount,
+  daysSince = 1,
+  commentCount = 0,
+  likeCount = 0,
+  suggested = false,
 }: PostProps) => (
   <>
-    <PostHeader location={location} user={user} />
+    <PostHeader location={location} user={user} suggested={suggested} />
     <PostImage uri={imageUri} />
     <PostFooter
       description={description}
@@ -21,6 +23,7 @@ const Post = ({
       user={user}
       daysSince={daysSince}
       commentCount={commentCount}
+      likeCount={likeCount}
     />
   </>
 );

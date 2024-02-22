@@ -1,9 +1,9 @@
 import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
-  container: {
-    aspectRatio: 1,
-    maxHeight: 400,
-    minWidth: '100%',
+  separator: {
+    width: '100%',
+    height: 1,
+    backgroundColor: '#d3d3d3',
   },
 });
