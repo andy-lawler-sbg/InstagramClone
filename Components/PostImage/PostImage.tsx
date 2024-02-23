@@ -1,15 +1,22 @@
-import {Image} from 'react-native';
+import {Image, View, Animated} from 'react-native';
 import styles from './PostImage.styles';
 import {PostImageProps} from './PostImage.types';
+import PagerView from 'react-native-pager-view';
 
-const PostImage = ({uri}: PostImageProps) => {
+const AnimatedPagerView = Animated.createAnimatedComponent(PagerView);
+
+const PostImage = ({uris}: PostImageProps) => {
   return (
-    <Image
-      source={{
-        uri: uri,
-      }}
-      style={[styles.container]}
-    />
+    <AnimatedPagerView style={styles.container} initialPage={0}>
+      {uris.map((uri, index, uris) => (
+        <Image
+          key={`${index + 1}`}
+          source={{
+            uri: uri,
+          }}
+        />
+      ))}
+    </AnimatedPagerView>
   );
 };
 

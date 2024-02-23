@@ -6,7 +6,7 @@ import {PostProps} from './Post.types';
 const Post = ({
   user,
   location,
-  imageUri,
+  uris,
   description,
   hashtag,
   daysSince = 1,
@@ -15,8 +15,13 @@ const Post = ({
   suggested = false,
 }: PostProps) => (
   <>
-    <PostHeader location={location} user={user} suggested={suggested} />
-    <PostImage uri={imageUri} />
+    <PostHeader
+      location={location}
+      user={user}
+      suggested={suggested}
+      followed={user.followed}
+    />
+    <PostImage uris={uris} />
     <PostFooter
       description={description}
       hashtag={hashtag}

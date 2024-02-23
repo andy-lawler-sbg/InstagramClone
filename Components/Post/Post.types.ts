@@ -6,7 +6,7 @@ export type PostProps = {
   likeCount: number;
   commentCount: number;
   location: string;
-  imageUri: string;
+  uris: string[];
   description: string;
   hashtag: string;
   daysSince: number;

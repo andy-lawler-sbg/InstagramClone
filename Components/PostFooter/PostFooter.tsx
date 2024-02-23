@@ -4,6 +4,7 @@ import AccountName from '../AccountName/AccountName';
 import AccountImage from '../AccountImage/AccountImage';
 import {PostFooterProps} from './PostFooter.types';
 import postHeaderStyles from '../PostHeader/PostHeader.styles';
+import {LoggedInUser} from '../../data/Posts';
 
 const PostFooter = ({
   description,
@@ -61,7 +62,7 @@ const PostFooter = ({
         <View style={styles.addACommentContainer}>
           <AccountImage
             style={styles.accountImage}
-            avatarUri={user.avatarUri}
+            avatarUri={LoggedInUser.avatarUri}
           />
           <Text style={styles.addACommentText}>Add a comment...</Text>
         </View>

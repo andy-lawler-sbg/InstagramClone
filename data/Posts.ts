@@ -1,4 +1,12 @@
 import {PostProps} from '../components/Post/Post.types';
+import {UserProps} from '../types/User.types';
+
+export const LoggedInUser: UserProps = {
+  avatarUri:
+    'https://ca.slack-edge.com/E02NBG9NN84-U03KERMRU3W-a3e4e11c99cc-512',
+  username: 'andylawlerdev',
+  followed: false,
+};
 
 export const PostData: Array<PostProps> = [
   {
@@ -10,8 +18,10 @@ export const PostData: Array<PostProps> = [
       followed: false,
     },
     location: 'Liverpool, England',
-    imageUri:
+    uris: [
       'https://lfccityexplorer.co.uk/wp-content/uploads/2018/09/how-to-get-to-anfield-liverpool-fc-stadium02.jpg',
+      'https://d3j2s6hdd6a7rg.cloudfront.net/v2/uploads/media/default/0001/97/thumb_96934_default_news_size_5.jpeg',
+    ],
     description: 'Looking forward to tonight ⚽️',
     hashtag: '#LFC',
     daysSince: 1,
@@ -28,8 +38,9 @@ export const PostData: Array<PostProps> = [
       followed: false,
     },
     location: 'San Francisco, California',
-    imageUri:
+    uris: [
       'https://cdn.property-forum.eu//image/articles/16791/1500/meta_london-688.jpg',
+    ],
     description: 'Nice day at the office',
     hashtag: '#meta',
     daysSince: 5,
@@ -46,13 +57,34 @@ export const PostData: Array<PostProps> = [
       followed: false,
     },
     location: 'Space',
-    imageUri:
+    uris: [
       'https://cdn.zeebiz.com/sites/default/files/2023/07/25/252927-m6mmxfkahnkffjoqx7y3knvl3i.jpg',
+      'https://image.cnbcfm.com/api/v1/image/104504783-GettyImages-494548555.jpg?v=1533926309&w=1920&h=1080',
+    ],
     description: 'Successful Launch Today 🚀',
     hashtag: '#spacex #tesla',
     daysSince: 2,
     commentCount: 500,
     suggested: false,
     likeCount: 20000,
+  },
+  {
+    id: 4,
+    user: {
+      avatarUri: 'https://thumbs.dreamstime.com/b/web-192037111.jpg',
+      username: 'adidas',
+      followed: false,
+    },
+    location: 'The land of the originals.',
+    uris: [
+      'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/3bbecbdf584e40398446a8bf0117cf62_9366/Samba_OG_Shoes_White_B75806_01_standard.jpg',
+      'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/4c70105150234ac4b948a8bf01187e0c_9366/Samba_OG_Shoes_Black_B75807_01_standard.jpg',
+    ],
+    description: 'The new exclusive Samba range is out now. 👟',
+    hashtag: '#adidas #samba',
+    daysSince: 1,
+    commentCount: 2,
+    suggested: true,
+    likeCount: 10,
   },
 ];

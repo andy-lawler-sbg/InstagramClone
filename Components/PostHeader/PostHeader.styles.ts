@@ -1,7 +1,13 @@
 import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
-  container: {
+  suggestedContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    margin: 10,
+  },
+  horizontalContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -12,6 +18,7 @@ export default StyleSheet.create({
   imageAndDetailsContainer: {
     flexDirection: 'row',
     alignItems: 'center',
+    gap: 5,
   },
   profileImageCircle: {
     width: 44,

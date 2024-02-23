@@ -4,4 +4,5 @@ export type PostHeaderProps = {
   user: UserProps;
   location: string;
   suggested: boolean;
+  followed: boolean;
 };
