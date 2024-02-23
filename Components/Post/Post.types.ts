@@ -1,5 +1,7 @@
 import {UserProps} from '../../types/User.types';
 
+type PostType = 'normal' | 'sponsored' | 'paid' | 'suggested';
+
 export type PostProps = {
   id: number;
   user: UserProps;
@@ -10,5 +12,5 @@ export type PostProps = {
   description: string;
   hashtag: string;
   daysSince: number;
-  suggested: boolean;
+  type: PostType;
 };

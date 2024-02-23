@@ -40,7 +40,13 @@ export default StyleSheet.create({
     fontWeight: 'thin',
   },
   editIcon: {
-    fontWeight: 'bold',
+    height: 10,
+    width: 23,
+    tintColor: 'grey',
+  },
+  closeIcon: {
+    height: 10,
+    width: 20,
   },
   trailingActionsContainer: {
     flexDirection: 'row',

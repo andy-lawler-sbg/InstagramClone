@@ -12,14 +12,15 @@ const Post = ({
   daysSince = 1,
   commentCount = 0,
   likeCount = 0,
-  suggested = false,
+  type = 'normal',
 }: PostProps) => (
   <>
     <PostHeader
       location={location}
       user={user}
-      suggested={suggested}
+      suggested={type === 'suggested'}
       followed={user.followed}
+      sponsored={type === 'sponsored'}
     />
     <PostImage uris={uris} />
     <PostFooter

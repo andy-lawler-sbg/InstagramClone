@@ -54,5 +54,6 @@ export default StyleSheet.create({
   },
   timeSinceText: {
     color: 'gray',
+    fontSize: 12,
   },
 });

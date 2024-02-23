@@ -6,8 +6,8 @@ export default StyleSheet.create({
     paddingBottom: 10,
   },
   container: {
-    paddingLeft: 20,
+    paddingLeft: 12,
     flexDirection: 'row',
-    gap: 20,
+    gap: 10,
   },
 });

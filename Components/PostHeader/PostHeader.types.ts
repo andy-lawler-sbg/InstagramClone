@@ -5,4 +5,5 @@ export type PostHeaderProps = {
   location: string;
   suggested: boolean;
   followed: boolean;
+  sponsored: boolean;
 };
