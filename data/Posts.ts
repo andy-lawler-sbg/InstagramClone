@@ -79,9 +79,31 @@ export const PostData: Array<PostProps> = [
     uris: [
       'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/3bbecbdf584e40398446a8bf0117cf62_9366/Samba_OG_Shoes_White_B75806_01_standard.jpg',
       'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/4c70105150234ac4b948a8bf01187e0c_9366/Samba_OG_Shoes_Black_B75807_01_standard.jpg',
+      'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/31715de33f6643eeb32b6a82008bd648_9366/Samba_OG_Shoes_White_IG5932_01_standard.jpg',
+      'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/4e0564c27f754915b743afa200c7db08_9366/adidas_Originals_Samba_Shoes_White_ID2047_01_standard.jpg',
     ],
     description: 'The new exclusive Samba range is out now. 👟',
     hashtag: '#adidas #samba',
+    daysSince: 1,
+    commentCount: 2,
+    likeCount: 10,
+    type: 'sponsored',
+  },
+  {
+    id: 5,
+    user: {
+      avatarUri:
+        'https://dafontspro.com/wp-content/uploads/Ferrari-Logo-Font-01.webp',
+      username: 'ferrari',
+      followed: false,
+    },
+    location: 'Monza, Italy',
+    uris: [
+      'https://img.asmedia.epimg.net/resizer/UJTZEGbJt4AVgE0yr922M7_pvwo=/644x362/cloudfront-eu-central-1.images.arcpublishing.com/diarioas/VWNQAWNKAE6O3MUSOAEOAYKYE4.jpg',
+      'https://e0.365dm.com/24/02/768x432/skysports-ferrari-f1-2024-launch_6453995.png?20240213110628',
+    ],
+    description: 'F1 2024 🏁',
+    hashtag: '#f1',
     daysSince: 1,
     commentCount: 2,
     likeCount: 10,
