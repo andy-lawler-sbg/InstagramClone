@@ -13,14 +13,6 @@ const App = () => {
       <NavigationContainer>
         <Tab.Navigator
           screenOptions={({route}) => ({
-            tabBarIcon: ({focused, color, size}) => {
-              let iconName;
-              if (route.name === 'Home') {
-                iconName = focused ? 'add-circle' : 'home-outline';
-              }
-              // You can return any component that you like here!
-              return <Icon name={iconName} size={size} color={color} />;
-            },
             tabBarActiveTintColor: 'blue',
             tabBarInactiveTintColor: 'gray',
             headerShown: false,
