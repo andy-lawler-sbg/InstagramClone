@@ -26,8 +26,9 @@ export const PostData: Array<PostProps> = [
     hashtag: '#LFC',
     daysSince: 1,
     commentCount: 10,
-    suggested: true,
-    likeCount: 0,
+    suggested: false,
+    likeCount: 10,
+    sponsored: false,
   },
   {
     id: 2,
@@ -47,6 +48,7 @@ export const PostData: Array<PostProps> = [
     commentCount: 20,
     suggested: false,
     likeCount: 10,
+    sponsored: false,
   },
   {
     id: 3,
@@ -67,6 +69,7 @@ export const PostData: Array<PostProps> = [
     commentCount: 500,
     suggested: false,
     likeCount: 20000,
+    sponsored: false,
   },
   {
     id: 4,
@@ -84,7 +87,8 @@ export const PostData: Array<PostProps> = [
     hashtag: '#adidas #samba',
     daysSince: 1,
     commentCount: 2,
-    suggested: true,
+    suggested: false,
     likeCount: 10,
+    sponsored: true,
   },
 ];
