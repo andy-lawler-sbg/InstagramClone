@@ -37,6 +37,7 @@ const Post = ({
       id={id}
       isLiked={isLiked}
       isSaved={isSaved}
+      sponsored={type === 'sponsored'}
     />
   </>
 );

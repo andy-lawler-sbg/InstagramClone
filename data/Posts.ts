@@ -1,34 +1,44 @@
 import {PostProps} from '../components/Post/Post.types';
-import {UserProps} from '../types/User.types';
-
-export const LoggedInUser: UserProps = {
-  avatarUri:
-    'https://ca.slack-edge.com/E02NBG9NN84-U03KERMRU3W-a3e4e11c99cc-512',
-  username: 'andylawlerdev',
-  followed: false,
-};
+import {LoggedInUser} from './LoggedInUser';
+import {mockedUser} from './MockedUser';
 
 export const PostData: PostProps[] = [
+  {
+    id: 0,
+    user: LoggedInUser,
+    location: 'Liverpool, England',
+    uris: [
+      'https://lfccityexplorer.co.uk/wp-content/uploads/2018/09/how-to-get-to-anfield-liverpool-fc-stadium02.jpg',
+    ],
+    description: 'I love this city ⚽️',
+    hashtag: '#LFC',
+    daysSince: 1,
+    likeCount: 120,
+    type: 'normal',
+    isLiked: true,
+    isSaved: true,
+    comments: [],
+  },
   {
     id: 1,
     user: {
       avatarUri:
-        'https://ca.slack-edge.com/E02NBG9NN84-U03KERMRU3W-a3e4e11c99cc-512',
-      username: 'andylawlerdev',
-      followed: false,
+        'https://1000logos.net/wp-content/uploads/2021/02/Liverpool-logo.jpg',
+      username: 'LiverpoolFC',
+      followed: true,
     },
-    location: 'Liverpool, England',
+    location: 'Wembley Stadium, London',
     uris: [
       'https://lfccityexplorer.co.uk/wp-content/uploads/2018/09/how-to-get-to-anfield-liverpool-fc-stadium02.jpg',
       'https://d3j2s6hdd6a7rg.cloudfront.net/v2/uploads/media/default/0001/97/thumb_96934_default_news_size_5.jpeg',
     ],
-    description: 'Looking forward to tonight ⚽️',
-    hashtag: '#LFC',
+    description: 'What a win, what a team. ⚽️',
+    hashtag: '#LFC #CarabaoCup',
     daysSince: 1,
-    likeCount: 10,
+    likeCount: 503421,
     type: 'normal',
-    isLiked: false,
-    isSaved: false,
+    isLiked: true,
+    isSaved: true,
     comments: [
       {
         id: 1,
@@ -38,8 +48,22 @@ export const PostData: PostProps[] = [
           username: 'andylawlerdev',
           followed: false,
         },
-        comment: 'hello world',
-        likes: 1,
+        comment: 'Big win, up the reds!!',
+        likes: 2,
+        isLiked: true,
+      },
+      {
+        id: 2,
+        user: mockedUser('john'),
+        comment: 'Unreal lads',
+        likes: 3,
+        isLiked: false,
+      },
+      {
+        id: 3,
+        user: mockedUser('sam'),
+        comment: 'Van Djik best in the world',
+        likes: 3,
         isLiked: false,
       },
     ],
@@ -66,13 +90,15 @@ export const PostData: PostProps[] = [
     comments: [
       {
         id: 1,
-        user: {
-          avatarUri:
-            'https://ca.slack-edge.com/E02NBG9NN84-U03KERMRU3W-a3e4e11c99cc-512',
-          username: 'andylawlerdev',
-          followed: false,
-        },
-        comment: 'hello world',
+        user: mockedUser('john'),
+        comment: 'Metaverse 🌍',
+        likes: 10,
+        isLiked: true,
+      },
+      {
+        id: 1,
+        user: LoggedInUser,
+        comment: 'Apple Vision Pro is better 🤣',
         likes: 1,
         isLiked: false,
       },
@@ -84,7 +110,7 @@ export const PostData: PostProps[] = [
       avatarUri:
         'https://hips.hearstapps.com/hmg-prod/images/gettyimages-1229892983-square.jpg',
       username: 'elon',
-      followed: false,
+      followed: true,
     },
     location: 'Space',
     uris: [
@@ -94,24 +120,11 @@ export const PostData: PostProps[] = [
     description: 'Successful Launch Today 🚀',
     hashtag: '#spacex #tesla',
     daysSince: 2,
-    likeCount: 20000,
+    likeCount: 203421,
     type: 'normal',
-    isLiked: false,
-    isSaved: false,
-    comments: [
-      {
-        id: 1,
-        user: {
-          avatarUri:
-            'https://ca.slack-edge.com/E02NBG9NN84-U03KERMRU3W-a3e4e11c99cc-512',
-          username: 'andylawlerdev',
-          followed: false,
-        },
-        comment: 'hello world',
-        likes: 1,
-        isLiked: false,
-      },
-    ],
+    isLiked: true,
+    isSaved: true,
+    comments: [],
   },
   {
     id: 4,
@@ -155,7 +168,7 @@ export const PostData: PostProps[] = [
       avatarUri:
         'https://dafontspro.com/wp-content/uploads/Ferrari-Logo-Font-01.webp',
       username: 'ferrari',
-      followed: false,
+      followed: true,
     },
     location: 'Monza, Italy',
     uris: [
@@ -165,10 +178,10 @@ export const PostData: PostProps[] = [
     description: 'F1 2024 🏁',
     hashtag: '#f1',
     daysSince: 1,
-    likeCount: 10,
+    likeCount: 100200,
     type: 'normal',
-    isLiked: false,
-    isSaved: false,
+    isLiked: true,
+    isSaved: true,
     comments: [
       {
         id: 1,
@@ -178,7 +191,7 @@ export const PostData: PostProps[] = [
           username: 'andylawlerdev',
           followed: false,
         },
-        comment: 'hello world',
+        comment: '🏎️ nyooom',
         likes: 1,
         isLiked: false,
       },

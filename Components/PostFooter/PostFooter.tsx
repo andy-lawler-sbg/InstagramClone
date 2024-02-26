@@ -4,7 +4,7 @@ import AccountName from '../AccountName/AccountName';
 import AccountImage from '../AccountImage/AccountImage';
 import {PostFooterProps} from './PostFooter.types';
 import postHeaderStyles from '../PostHeader/PostHeader.styles';
-import {LoggedInUser} from '../../data/Posts';
+import {LoggedInUser} from '../../data/LoggedInUser';
 import {
   likePost,
   save,
@@ -25,6 +25,7 @@ const PostFooter = ({
   likeCount,
   isLiked,
   isSaved,
+  sponsored,
 }: PostFooterProps) => {
   const dispatch = useDispatch();
   const didPressLikePost = useCallback(() => dispatch(likePost(id)), []);
@@ -64,7 +65,7 @@ const PostFooter = ({
         onRequestClose={() => {
           shouldShowComments(!showComments);
         }}>
-        <ViewComments postId={id} comments={comments} />
+        <ViewComments postId={id} user={user} comments={comments} />
       </Modal>
       <View style={styles.footerActionsContainer}>
         <View style={styles.reactionContainer}>
@@ -112,9 +113,11 @@ const PostFooter = ({
         </Pressable>
       </View>
       <View style={styles.container}>
-        <Text style={postHeaderStyles.accountText}>
-          {likeCount.toLocaleString()} {likes}
-        </Text>
+        {sponsored === false && (
+          <Text style={postHeaderStyles.accountText}>
+            {likeCount.toLocaleString()} {likes}
+          </Text>
+        )}
         <View style={styles.postDescriptionContainer}>
           <AccountName username={user.username} />
           <Text style={styles.postCommentText}>{description}</Text>
@@ -125,19 +128,23 @@ const PostFooter = ({
             View all {comments.length} comments
           </Text>
         </Pressable>
-        <View style={styles.addACommentContainer}>
-          <AccountImage
-            style={styles.accountImage}
-            avatarUri={LoggedInUser.avatarUri}
-          />
-          <TextInput
-            value={comment}
-            style={styles.addACommentText}
-            onChangeText={onChangeText}
-            onEndEditing={didPressAddComment}
-            placeholder="Add a comment..."
-          />
-        </View>
+        {comments.length === 0 && (
+          <View style={styles.addACommentContainer}>
+            <AccountImage
+              style={styles.accountImage}
+              avatarUri={LoggedInUser.avatarUri}
+            />
+            <TextInput
+              value={comment}
+              style={styles.addACommentText}
+              onChangeText={onChangeText}
+              onEndEditing={didPressAddComment}
+              placeholder="Add a comment..."
+              keyboardType="default"
+              returnKeyType="send"
+            />
+          </View>
+        )}
         {comments.length > 0 && (
           <View style={styles.postCommentContainer}>
             <View style={styles.postCommentInnerContainer}>

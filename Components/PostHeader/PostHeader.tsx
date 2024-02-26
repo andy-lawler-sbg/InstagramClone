@@ -44,7 +44,7 @@ const PostHeader = ({
           </View>
         </View>
         <View style={styles.trailingActionsContainer}>
-          {followed && (
+          {followed === false && (
             <Pressable style={styles.followButton}>
               <Text style={styles.followButtonText}>Follow</Text>
             </Pressable>

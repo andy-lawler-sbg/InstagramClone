@@ -50,6 +50,7 @@ export default StyleSheet.create({
   },
   trailingActionsContainer: {
     flexDirection: 'row',
+    alignItems: 'center',
     justifyContent: 'center',
   },
   followButton: {

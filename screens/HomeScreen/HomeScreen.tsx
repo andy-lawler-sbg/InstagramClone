@@ -26,6 +26,7 @@ const HomeScreen = () => {
         paddingTop: insets.top,
         paddingLeft: insets.left,
         paddingRight: insets.right,
+        backgroundColor: 'white',
       }}>
       <FlatList
         showsVerticalScrollIndicator={false}
@@ -33,6 +34,7 @@ const HomeScreen = () => {
         renderItem={({item}) => <Post {...item} />}
         keyExtractor={(item: PostProps) => item.id}
         ListHeaderComponent={listHeaderComponent}
+        style={{backgroundColor: 'white'}}
       />
     </View>
   );

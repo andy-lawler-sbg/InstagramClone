@@ -11,4 +11,5 @@ export type PostFooterProps = {
   likeCount: number;
   isLiked: boolean;
   isSaved: boolean;
+  sponsored: boolean;
 };

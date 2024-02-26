@@ -8,6 +8,7 @@ export default StyleSheet.create({
   username: {
     paddingTop: 5,
     marginBottom: 5,
+    fontSize: 12,
   },
   image: {
     height: 70,
