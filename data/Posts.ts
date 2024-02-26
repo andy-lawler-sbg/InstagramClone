@@ -8,7 +8,7 @@ export const LoggedInUser: UserProps = {
   followed: false,
 };
 
-export const PostData: Array<PostProps> = [
+export const PostData: PostProps[] = [
   {
     id: 1,
     user: {
@@ -25,9 +25,24 @@ export const PostData: Array<PostProps> = [
     description: 'Looking forward to tonight ⚽️',
     hashtag: '#LFC',
     daysSince: 1,
-    commentCount: 10,
     likeCount: 10,
     type: 'normal',
+    isLiked: false,
+    isSaved: false,
+    comments: [
+      {
+        id: 1,
+        user: {
+          avatarUri:
+            'https://ca.slack-edge.com/E02NBG9NN84-U03KERMRU3W-a3e4e11c99cc-512',
+          username: 'andylawlerdev',
+          followed: false,
+        },
+        comment: 'hello world',
+        likes: 1,
+        isLiked: false,
+      },
+    ],
   },
   {
     id: 2,
@@ -44,9 +59,24 @@ export const PostData: Array<PostProps> = [
     description: 'Nice day at the office',
     hashtag: '#meta',
     daysSince: 5,
-    commentCount: 20,
     likeCount: 10,
     type: 'suggested',
+    isLiked: false,
+    isSaved: false,
+    comments: [
+      {
+        id: 1,
+        user: {
+          avatarUri:
+            'https://ca.slack-edge.com/E02NBG9NN84-U03KERMRU3W-a3e4e11c99cc-512',
+          username: 'andylawlerdev',
+          followed: false,
+        },
+        comment: 'hello world',
+        likes: 1,
+        isLiked: false,
+      },
+    ],
   },
   {
     id: 3,
@@ -64,9 +94,24 @@ export const PostData: Array<PostProps> = [
     description: 'Successful Launch Today 🚀',
     hashtag: '#spacex #tesla',
     daysSince: 2,
-    commentCount: 500,
     likeCount: 20000,
     type: 'normal',
+    isLiked: false,
+    isSaved: false,
+    comments: [
+      {
+        id: 1,
+        user: {
+          avatarUri:
+            'https://ca.slack-edge.com/E02NBG9NN84-U03KERMRU3W-a3e4e11c99cc-512',
+          username: 'andylawlerdev',
+          followed: false,
+        },
+        comment: 'hello world',
+        likes: 1,
+        isLiked: false,
+      },
+    ],
   },
   {
     id: 4,
@@ -85,9 +130,24 @@ export const PostData: Array<PostProps> = [
     description: 'The new exclusive Samba range is out now. 👟',
     hashtag: '#adidas #samba',
     daysSince: 1,
-    commentCount: 2,
     likeCount: 10,
     type: 'sponsored',
+    isLiked: false,
+    isSaved: false,
+    comments: [
+      {
+        id: 1,
+        user: {
+          avatarUri:
+            'https://ca.slack-edge.com/E02NBG9NN84-U03KERMRU3W-a3e4e11c99cc-512',
+          username: 'andylawlerdev',
+          followed: false,
+        },
+        comment: 'hello world',
+        likes: 1,
+        isLiked: false,
+      },
+    ],
   },
   {
     id: 5,
@@ -105,8 +165,23 @@ export const PostData: Array<PostProps> = [
     description: 'F1 2024 🏁',
     hashtag: '#f1',
     daysSince: 1,
-    commentCount: 2,
     likeCount: 10,
-    type: 'sponsored',
+    type: 'normal',
+    isLiked: false,
+    isSaved: false,
+    comments: [
+      {
+        id: 1,
+        user: {
+          avatarUri:
+            'https://ca.slack-edge.com/E02NBG9NN84-U03KERMRU3W-a3e4e11c99cc-512',
+          username: 'andylawlerdev',
+          followed: false,
+        },
+        comment: 'hello world',
+        likes: 1,
+        isLiked: false,
+      },
+    ],
   },
 ];

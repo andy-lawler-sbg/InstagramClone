@@ -27,7 +27,14 @@ export default StyleSheet.create({
     spacing: 10,
     gap: 4,
   },
+  postDescriptionContainer: {
+    flexDirection: 'row',
+  },
   postCommentContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  postCommentInnerContainer: {
     flexDirection: 'row',
   },
   postCommentText: {
@@ -49,11 +56,15 @@ export default StyleSheet.create({
     borderRadius: 10,
   },
   addACommentText: {
-    color: 'gray',
     paddingLeft: 5,
   },
   timeSinceText: {
     color: 'gray',
     fontSize: 12,
+  },
+  likeCommentButton: {
+    height: 14,
+    width: 14,
+    borderRadius: 7,
   },
 });

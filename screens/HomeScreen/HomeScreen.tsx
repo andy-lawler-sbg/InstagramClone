@@ -5,7 +5,7 @@ import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import Header from '../../components/Header/Header';
 import Post from '../../components/Post/Post';
 import {PostProps} from '../../components/Post/Post.types';
-import {PostData} from '../../data/Posts';
+import {useSelector} from 'react-redux';
 
 const listHeaderComponent = () => (
   <>
@@ -16,7 +16,9 @@ const listHeaderComponent = () => (
 );
 
 const HomeScreen = () => {
+  const posts = useSelector(state => state.posts);
   const insets = useSafeAreaInsets();
+
   return (
     <View
       style={{
@@ -27,7 +29,7 @@ const HomeScreen = () => {
       }}>
       <FlatList
         showsVerticalScrollIndicator={false}
-        data={PostData}
+        data={posts}
         renderItem={({item}) => <Post {...item} />}
         keyExtractor={(item: PostProps) => item.id}
         ListHeaderComponent={listHeaderComponent}

@@ -2,13 +2,13 @@ import HomeScreen from './screens/HomeScreen/HomeScreen';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
-import {Image} from 'react-native';
-import Icon from 'react-native-ionicons';
+import store from './app/store';
+import {Provider} from 'react-redux';
 
 const Tab = createBottomTabNavigator();
 
-const App = () => {
-  return (
+const App = () => (
+  <Provider store={store}>
     <SafeAreaProvider>
       <NavigationContainer>
         <Tab.Navigator
@@ -21,7 +21,7 @@ const App = () => {
         </Tab.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>
-  );
-};
+  </Provider>
+);
 
 export default App;
