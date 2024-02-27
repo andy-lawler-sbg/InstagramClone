@@ -1,7 +1,7 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 import {PostData} from '../../data/Posts';
 import {CommentProps} from '../../types/Comment.types';
-import {PostProps} from '../../components/Post/Post.types';
+import {PostProps} from '../../types/Post.types';
 
 const postsSlice = createSlice({
   name: 'posts',

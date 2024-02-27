@@ -19,4 +19,28 @@ export const StoriesData: StoryProps[] = [
     timeSince: '5h',
     isLiked: false,
   },
+  {
+    id: 3,
+    user: mockedUser('ferrari'),
+    imageUri:
+      'https://external-preview.redd.it/ferrari-2024-greater-load-in-relation-to-aerodynamics-v0-1Xa-uLi31ENRHPgEaLCKxz_eC0p0NiEUD8veGpmYXtM.jpg?auto=webp&s=7b7c2828a6b74da4a5d14db265d5bbf4d8a0b658',
+    timeSince: '8h',
+    isLiked: false,
+  },
+  {
+    id: 4,
+    user: mockedUser('john'),
+    imageUri:
+      'https://a.cdn-hotels.com/gdcs/production126/d918/fa24cf16-2857-4708-a70d-6878f66d1245.jpg?impolicy=fcrop&w=800&h=533&q=medium',
+    timeSince: '20h',
+    isLiked: true,
+  },
+  {
+    id: 5,
+    user: mockedUser('adidas'),
+    imageUri:
+      'https://www.sportsdirect.com/images/marketing/adi-football-boots-thumb-d-240116-v2.jpg',
+    timeSince: '20h',
+    isLiked: true,
+  },
 ];

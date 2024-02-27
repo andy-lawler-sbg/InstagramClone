@@ -4,13 +4,12 @@ import {
   Pressable,
   Image,
   TextInput,
-  ScrollView,
   KeyboardAvoidingView,
   Platform,
+  FlatList,
 } from 'react-native';
-import AccountName from '../AccountName/AccountName';
 import {useDispatch} from 'react-redux';
-import {likeComment, addComment} from '../../features/posts/postsSlice';
+import {addComment} from '../../features/posts/postsSlice';
 import Separator from '../Seperator/Separator';
 import AccountImage from '../AccountImage/AccountImage';
 import {useState} from 'react';
@@ -18,6 +17,7 @@ import styles from './ViewComments.styles';
 import {ViewCommentsProps} from './ViewComments.types';
 import {useHeaderHeight} from '@react-navigation/elements';
 import {LoggedInUser} from '../../data/LoggedInUser';
+import CommentView from './Comment/CommentView';
 
 const ViewComments = ({postId, user, comments}: ViewCommentsProps) => {
   const didPressAddComment = () => {
@@ -43,15 +43,7 @@ const ViewComments = ({postId, user, comments}: ViewCommentsProps) => {
   return (
     <View style={styles.container}>
       <View>
-        <Text
-          style={{
-            fontWeight: 'bold',
-            fontSize: 20,
-            alignSelf: 'center',
-            margin: 20,
-          }}>
-          Comments
-        </Text>
+        <Text style={styles.headerText}>Comments</Text>
         <Pressable
           style={{
             position: 'absolute',
@@ -74,39 +66,16 @@ const ViewComments = ({postId, user, comments}: ViewCommentsProps) => {
         </Pressable>
       </View>
       <Separator />
-      <ScrollView>
-        {comments.map(comment => (
-          <View style={styles.commentContainer}>
-            <View style={styles.leftContainer}>
-              <AccountImage avatarUri={comment.user.avatarUri} style={{}} />
-              <View style={styles.userCommentContainer}>
-                <View style={styles.userTimeSinceContainer}>
-                  <AccountName username={comment.user.username} />
-                  <Text style={styles.timeSinceText}>17s</Text>
-                </View>
-                <Text>{comment.comment}</Text>
-                <Text style={styles.replyText}>Reply</Text>
-              </View>
-            </View>
-            <View style={styles.likeCommentContainer}>
-              <Pressable
-                onPress={() =>
-                  dispatch(likeComment({postId: postId, commentId: comment.id}))
-                }>
-                <Image
-                  source={
-                    comment.isLiked
-                      ? require('../../assets/heart.png')
-                      : require('../../assets/heart-outline.png')
-                  }
-                  style={styles.likeCommentButton}
-                />
-              </Pressable>
-              {comment.likes > 0 && <Text>{comment.likes}</Text>}
-            </View>
-          </View>
-        ))}
-      </ScrollView>
+      <FlatList
+        contentContainerStyle={{
+          flex: 1,
+        }}
+        vertical
+        showsVerticalScrollIndicator={false}
+        data={comments}
+        keyExtractor={item => item.id}
+        renderItem={({item}) => <CommentView comment={item} postId={postId} />}
+      />
       <Separator />
       <KeyboardAvoidingView
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}

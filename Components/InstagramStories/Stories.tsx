@@ -1,48 +1,24 @@
-import {Modal, Pressable, FlatList} from 'react-native';
+import {FlatList} from 'react-native';
 import styles from './Stories.styles';
 import Story from '../InstagramStory/Story';
-import {useState, useCallback} from 'react';
-import ViewStory from './ViewStory/ViewStory';
-import {useSelector} from 'react-redux';
+import {useCallback} from 'react';
 import {StoryProps} from '../../types/Story.types';
+import {useSelector} from 'react-redux';
 
 const Stories = () => {
   const stories = useSelector(state => state.stories);
-  const [showStory, shouldShowStory] = useState<boolean>(false);
-  const [story, setStory] = useState<StoryProps>(stories[0]);
+  const keyExtractor = useCallback((item: StoryProps) => item.imageUri, []);
+  const renderItem = useCallback(({item}) => <Story {...item} />, []);
 
   return (
-    <>
-      <Modal
-        animationType="slide"
-        presentationStyle="fullScreen"
-        visible={showStory}
-        onRequestClose={() => {
-          shouldShowStory(!showStory);
-        }}>
-        <ViewStory
-          story={story}
-          shouldCloseStory={() => shouldShowStory(false)}
-        />
-      </Modal>
-      <FlatList
-        style={styles.container}
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        data={stories}
-        renderItem={({item}) => (
-          <Pressable
-            style={{marginHorizontal: 7}}
-            onPress={() => {
-              setStory(item);
-              shouldShowStory(true);
-            }}>
-            <Story {...item} />
-          </Pressable>
-        )}
-        keyExtractor={(item: StoryProps) => item.imageUri}
-      />
-    </>
+    <FlatList
+      style={styles.container}
+      horizontal
+      showsHorizontalScrollIndicator={false}
+      data={stories}
+      renderItem={renderItem}
+      keyExtractor={keyExtractor}
+    />
   );
 };
 

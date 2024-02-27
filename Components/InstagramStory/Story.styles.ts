@@ -5,6 +5,9 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  button: {
+    marginHorizontal: 7,
+  },
   username: {
     paddingTop: 5,
     marginBottom: 5,
@@ -22,5 +25,24 @@ export default StyleSheet.create({
   },
   greyText: {
     color: 'grey',
+  },
+  plusCircle: {
+    width: 20,
+    height: 20,
+    tintColor: '#0c97c2',
+    zIndex: 1,
+    position: 'absolute',
+    right: 0,
+    bottom: 0,
+  },
+  plusCircleBackground: {
+    width: 20,
+    height: 20,
+    backgroundColor: 'white',
+    borderRadius: 10,
+    zIndex: 0,
+    position: 'absolute',
+    right: 0,
+    bottom: 0,
   },
 });

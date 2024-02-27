@@ -1,5 +1,5 @@
-import {UserProps} from '../../types/User.types';
-import {CommentProps} from '../../types/Comment.types';
+import {UserProps} from './User.types';
+import {CommentProps} from './Comment.types';
 
 type PostType = 'normal' | 'sponsored' | 'paid' | 'suggested';
 

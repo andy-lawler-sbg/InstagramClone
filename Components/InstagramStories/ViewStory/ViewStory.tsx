@@ -8,10 +8,9 @@ import {
   Platform,
 } from 'react-native';
 import styles from './ViewStory.styles';
-import PostImage from '../../PostImage/PostImage';
 import AccountImage from '../../AccountImage/AccountImage';
 import AccountName from '../../AccountName/AccountName';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import {useHeaderHeight} from '@react-navigation/elements';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {ViewStoryProps} from './ViewStory.types';
@@ -23,6 +22,11 @@ const ViewStory = ({shouldCloseStory, story}: ViewStoryProps) => {
   const height = useHeaderHeight();
   const insets = useSafeAreaInsets();
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => shouldCloseStory(), 3000);
+    return () => clearTimeout(timeoutId);
+  }, []);
 
   return (
     <View

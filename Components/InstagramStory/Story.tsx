@@ -1,61 +1,69 @@
-import {View, Image, Text} from 'react-native';
+import {View, Image, Text, Modal, Pressable} from 'react-native';
 import styles from './Story.styles';
 import {StoryProps} from '../../types/Story.types';
 import {LoggedInUser} from '../../data/LoggedInUser';
 import {useSelector} from 'react-redux';
-import {likeStory} from '../../features/stories/storiesSlice';
+import ViewStory from '../InstagramStories/ViewStory/ViewStory';
+import {useState, useCallback} from 'react';
 
-const Story = ({user, imageUri, timeSince}: StoryProps) => {
+const Story = ({id, user, imageUri, timeSince, isLiked}: StoryProps) => {
   const stories = useSelector(state => state.stories);
   const loggedInUserStories = stories.find(
     story => story.user.username === LoggedInUser.username,
   );
+
+  const [showStory, shouldShowStory] = useState<boolean>(false);
+
+  const shouldCloseStory = useCallback(() => shouldShowStory(false), []);
+
   return (
-    <View style={styles.container}>
-      <View>
-        <Image
-          style={[
-            styles.image,
-            (user != LoggedInUser || loggedInUserStories != 0) &&
-              styles.colouredBorder,
-          ]}
-          source={{
-            uri: user.avatarUri,
+    <>
+      <Modal
+        animationType="slide"
+        presentationStyle="fullScreen"
+        visible={showStory}
+        onRequestClose={shouldCloseStory}>
+        <ViewStory
+          story={{
+            id: id,
+            user: user,
+            imageUri: imageUri,
+            timeSince: timeSince,
+            isLiked: isLiked,
           }}
+          shouldCloseStory={shouldCloseStory}
         />
-        {user === LoggedInUser && loggedInUserStories === 0 && (
-          <>
+      </Modal>
+      <Pressable onPress={() => shouldShowStory(true)} style={styles.button}>
+        <View style={styles.container}>
+          <View>
             <Image
-              style={{
-                width: 20,
-                height: 20,
-                tintColor: '#0c97c2',
-                zIndex: 1,
-                position: 'absolute',
-                right: 0,
-                bottom: 0,
-              }}
-              source={require('../../assets/plus-circle.png')}
-            />
-            <View
-              style={{
-                width: 20,
-                height: 20,
-                backgroundColor: 'white',
-                borderRadius: 10,
-                zIndex: 0,
-                position: 'absolute',
-                right: 0,
-                bottom: 0,
+              style={[
+                styles.image,
+                (user != LoggedInUser || loggedInUserStories != 0) &&
+                  styles.colouredBorder,
+              ]}
+              source={{
+                uri: user.avatarUri,
               }}
             />
-          </>
-        )}
-      </View>
-      <Text style={[styles.username, user === LoggedInUser && styles.greyText]}>
-        {user.username}
-      </Text>
-    </View>
+            {user === LoggedInUser && loggedInUserStories === 0 && (
+              <>
+                <Image
+                  style={styles.plusCircle}
+                  source={require('../../assets/plus-circle.png')}
+                />
+                <View style={styles.plusCircleBackground} />
+              </>
+            )}
+          </View>
+          <Text
+            style={[styles.username, user === LoggedInUser && styles.greyText]}>
+            {user.username}
+          </Text>
+        </View>
+      </Pressable>
+    </>
   );
 };
 
