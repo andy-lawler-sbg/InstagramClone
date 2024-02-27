@@ -30,6 +30,25 @@ export const PostData: PostProps[] = [
   },
   {
     id: 1,
+    user: mockedUser('routeone'),
+    location: 'Bold St, Liverpool',
+    uris: [
+      'https://pbs.twimg.com/media/ENia9eKXYAA3YT6.jpg:large',
+      'https://www.routeone.co.uk/cdn/shop/files/001031528.jpg?v=1698331435&width=1000',
+      'https://www.routeone.co.uk/cdn/shop/products/001031566.jpg?crop=center&height=1280&v=1597102924&width=1000',
+      'https://m.media-amazon.com/images/I/51JdghlRQ3L.jpg',
+    ],
+    description: 'Arch Logo boards now in stock!',
+    hashtag: '#State #L1',
+    daysSince: 1,
+    likeCount: 100,
+    type: 'sponsored',
+    isLiked: true,
+    isSaved: false,
+    comments: [],
+  },
+  {
+    id: 2,
     user: mockedUser('lfc'),
     location: 'Wembley Stadium, London',
     uris: [
@@ -68,7 +87,7 @@ export const PostData: PostProps[] = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     user: mockedUser('zuck'),
     location: 'San Francisco, California',
     uris: [
@@ -90,7 +109,7 @@ export const PostData: PostProps[] = [
         isLiked: true,
       },
       {
-        id: 1,
+        id: 2,
         user: LoggedInUser,
         comment: 'Apple Vision Pro is better 🤣',
         likes: 1,
@@ -99,7 +118,7 @@ export const PostData: PostProps[] = [
     ],
   },
   {
-    id: 3,
+    id: 4,
     user: mockedUser('elon'),
     location: 'Space',
     uris: [
@@ -116,7 +135,7 @@ export const PostData: PostProps[] = [
     comments: [],
   },
   {
-    id: 4,
+    id: 5,
     user: mockedUser('adidas'),
     location: 'The land of the originals.',
     uris: [
@@ -143,7 +162,7 @@ export const PostData: PostProps[] = [
     ],
   },
   {
-    id: 5,
+    id: 6,
     user: mockedUser('ferrari'),
     location: 'Monza, Italy',
     uris: [

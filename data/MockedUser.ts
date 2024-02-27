@@ -7,7 +7,8 @@ type MockUsers =
   | 'adidas'
   | 'elon'
   | 'zuck'
-  | 'lfc';
+  | 'lfc'
+  | 'routeone';
 
 // Enables mocked users with real usernames / profile icons etc to be returned with ease.
 // These users can then be used in other mocked data to ensure the data is simple.
@@ -63,9 +64,17 @@ export function mockedUser(user: MockUsers): UserProps {
       const lfc = {
         avatarUri:
           'https://1000logos.net/wp-content/uploads/2021/02/Liverpool-logo.jpg',
-        username: 'LiverpoolFC',
+        username: 'liverpoolfc',
         followed: true,
       };
       return lfc;
+    case 'routeone':
+      const routeone = {
+        avatarUri:
+          'https://www.voucherbox.co.uk/image/eyJrZXkiOiJ2Yi91cGxvYWRzL2xvZ29zL3JvdXRlLW9uZS5qcGciLCJvdXRwdXRGb3JtYXQiOiIiLCJlZGl0cyI6e319?1606903663',
+        username: 'routeone',
+        followed: true,
+      };
+      return routeone;
   }
 }
