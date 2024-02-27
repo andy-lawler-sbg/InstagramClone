@@ -4,7 +4,6 @@ import Separator from '../../components/Seperator/Separator';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import Header from '../../components/Header/Header';
 import Post from '../../components/Post/Post';
-import {PostProps} from '../../types/Post.types';
 import {useSelector} from 'react-redux';
 import styles from './HomeScreen.styles';
 import {useCallback} from 'react';
