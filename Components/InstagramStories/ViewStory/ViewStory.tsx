@@ -88,7 +88,10 @@ const ViewStory = ({shouldCloseStory, story}: ViewStoryProps) => {
                   ? require('../../../assets/heart.png')
                   : require('../../../assets/heart-outline.png')
               }
-              style={styles.button}
+              style={[
+                styles.button,
+                {tintColor: story.isLiked ? 'red' : 'black'},
+              ]}
             />
           </Pressable>
           <Pressable>

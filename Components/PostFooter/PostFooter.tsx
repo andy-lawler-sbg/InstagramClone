@@ -76,7 +76,10 @@ const PostFooter = ({
                   ? require('../../assets/heart.png')
                   : require('../../assets/heart-outline.png')
               }
-              style={styles.reactionButton}
+              style={[
+                styles.reactionButton,
+                {tintColor: isLiked ? 'red' : 'black'},
+              ]}
             />
           </Pressable>
           <Pressable onPress={() => shouldShowComments(true)}>
@@ -158,7 +161,10 @@ const PostFooter = ({
                     ? require('../../assets/heart.png')
                     : require('../../assets/heart-outline.png')
                 }
-                style={styles.likeCommentButton}
+                style={[
+                  styles.likeCommentButton,
+                  {tintColor: comments[0].isLiked ? 'red' : 'black'},
+                ]}
               />
             </Pressable>
           </View>
