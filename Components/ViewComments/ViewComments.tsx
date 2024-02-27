@@ -48,6 +48,16 @@ const ViewComments = ({postId, user, comments}: ViewCommentsProps) => {
 
   return (
     <View style={styles.container}>
+      <View
+        style={{
+          width: 60,
+          height: 4,
+          backgroundColor: '#d3d3d3',
+          borderRadius: 14,
+          alignSelf: 'center',
+          marginTop: 5,
+        }}
+      />
       <View>
         <Text style={styles.headerText}>Comments</Text>
         <Pressable style={styles.sendButton}>

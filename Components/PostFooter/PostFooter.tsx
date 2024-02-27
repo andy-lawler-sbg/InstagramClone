@@ -125,7 +125,7 @@ const PostFooter = ({
         <Text style={styles.postHashtagText}>{hashtag}</Text>
         <Pressable onPress={() => shouldShowComments(true)}>
           <Text style={styles.viewAllCommentsButton}>
-            View all {comments.length} comments
+            View All {comments.length} comments
           </Text>
         </Pressable>
         {comments.length === 0 && (
