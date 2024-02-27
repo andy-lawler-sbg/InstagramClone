@@ -44,12 +44,7 @@ const ViewComments = ({postId, user, comments}: ViewCommentsProps) => {
     <View style={styles.container}>
       <View>
         <Text style={styles.headerText}>Comments</Text>
-        <Pressable
-          style={{
-            position: 'absolute',
-            right: 10,
-            top: 20,
-          }}>
+        <Pressable style={styles.sendButton}>
           <Image
             source={require('../../assets/send-variant-outline.png')}
             style={[

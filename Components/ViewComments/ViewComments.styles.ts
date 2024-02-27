@@ -17,6 +17,11 @@ export default StyleSheet.create({
     borderRadius: 15,
     marginHorizontal: 5,
   },
+  sendButton: {
+    position: 'absolute',
+    right: 10,
+    top: 20,
+  },
   addCommentInput: {
     height: 40,
     flex: 1,
