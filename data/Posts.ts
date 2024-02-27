@@ -9,24 +9,32 @@ export const PostData: PostProps[] = [
     user: LoggedInUser,
     location: 'Liverpool, England',
     uris: [
-      'https://lfccityexplorer.co.uk/wp-content/uploads/2018/09/how-to-get-to-anfield-liverpool-fc-stadium02.jpg',
+      'https://mediaim.expedia.com/destination/1/b68b3b59d03f14bbbd9cee330d3fc0c5.jpg',
     ],
-    description: 'I love this city ⚽️',
-    hashtag: '#LFC',
+    description: 'I love this city',
+    hashtag: '#Liverpool',
     daysSince: 1,
     likeCount: 120,
     type: 'normal',
     isLiked: true,
     isSaved: true,
-    comments: [],
+    comments: [
+      {
+        id: 1,
+        user: mockedUser('sam'),
+        comment: '🌙',
+        likes: 2,
+        isLiked: false,
+      },
+    ],
   },
   {
     id: 1,
     user: mockedUser('lfc'),
     location: 'Wembley Stadium, London',
     uris: [
-      'https://lfccityexplorer.co.uk/wp-content/uploads/2018/09/how-to-get-to-anfield-liverpool-fc-stadium02.jpg',
-      'https://d3j2s6hdd6a7rg.cloudfront.net/v2/uploads/media/default/0001/97/thumb_96934_default_news_size_5.jpeg',
+      'https://static.srpcdigital.com/styles/1037xauto/public/2024-02/550552_0.jpeg',
+      'https://backend.liverpoolfc.com/sites/default/files/styles/xl/public/2024-02/carabao-cup-final-gallery-2-25022024-cover.jpg?itok=j2aooAIH',
     ],
     description: 'What a win, what a team. ⚽️',
     hashtag: '#LFC #CarabaoCup',
@@ -38,15 +46,10 @@ export const PostData: PostProps[] = [
     comments: [
       {
         id: 1,
-        user: {
-          avatarUri:
-            'https://ca.slack-edge.com/E02NBG9NN84-U03KERMRU3W-a3e4e11c99cc-512',
-          username: 'andylawlerdev',
-          followed: false,
-        },
+        user: LoggedInUser,
         comment: 'Big win, up the reds!!',
         likes: 2,
-        isLiked: true,
+        isLiked: false,
       },
       {
         id: 2,
@@ -132,13 +135,8 @@ export const PostData: PostProps[] = [
     comments: [
       {
         id: 1,
-        user: {
-          avatarUri:
-            'https://ca.slack-edge.com/E02NBG9NN84-U03KERMRU3W-a3e4e11c99cc-512',
-          username: 'andylawlerdev',
-          followed: false,
-        },
-        comment: 'hello world',
+        user: LoggedInUser,
+        comment: '👟👟👟👟',
         likes: 1,
         isLiked: false,
       },
@@ -150,7 +148,7 @@ export const PostData: PostProps[] = [
     location: 'Monza, Italy',
     uris: [
       'https://img.asmedia.epimg.net/resizer/UJTZEGbJt4AVgE0yr922M7_pvwo=/644x362/cloudfront-eu-central-1.images.arcpublishing.com/diarioas/VWNQAWNKAE6O3MUSOAEOAYKYE4.jpg',
-      'https://e0.365dm.com/24/02/768x432/skysports-ferrari-f1-2024-launch_6453995.png?20240213110628',
+      'https://formu1a.uno/wp-content/uploads/2023/08/F4YONnJWAAAokQt.jpg',
     ],
     description: 'F1 2024 🏁',
     hashtag: '#f1',
@@ -162,15 +160,17 @@ export const PostData: PostProps[] = [
     comments: [
       {
         id: 1,
-        user: {
-          avatarUri:
-            'https://ca.slack-edge.com/E02NBG9NN84-U03KERMRU3W-a3e4e11c99cc-512',
-          username: 'andylawlerdev',
-          followed: false,
-        },
+        user: LoggedInUser,
         comment: '🏎️ nyooom',
         likes: 1,
         isLiked: false,
+      },
+      {
+        id: 2,
+        user: mockedUser('john'),
+        comment: 'Red Bull >',
+        likes: 5,
+        isLiked: true,
       },
     ],
   },

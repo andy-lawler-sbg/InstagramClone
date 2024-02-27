@@ -16,7 +16,7 @@ export const StoriesData: StoryProps[] = [
     id: 2,
     user: mockedUser('sam'),
     imageUri:
-      'https://d3j2s6hdd6a7rg.cloudfront.net/v2/uploads/media/default/0001/97/thumb_96934_default_news_size_5.jpeg',
+      'https://i.guim.co.uk/img/media/308b2fa3cfc724b6505d91da437744f187fd09ee/0_195_3500_2100/master/3500.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=0cd0634cc268010eefd5b10b3b5b68b5',
     timeSince: '5h',
     isLiked: false,
   },

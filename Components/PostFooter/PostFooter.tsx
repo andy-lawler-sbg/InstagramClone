@@ -79,7 +79,7 @@ const PostFooter = ({
               style={styles.reactionButton}
             />
           </Pressable>
-          <Pressable>
+          <Pressable onPress={() => shouldShowComments(true)}>
             <Image
               source={require('../../assets/chat-outline.png')}
               style={[styles.reactionButton, {transform: [{scaleX: -1}]}]}

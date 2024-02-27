@@ -12,7 +12,7 @@ const App = () => (
     <SafeAreaProvider>
       <NavigationContainer>
         <Tab.Navigator
-          screenOptions={({route}) => ({
+          screenOptions={() => ({
             tabBarActiveTintColor: 'blue',
             tabBarInactiveTintColor: 'gray',
             headerShown: false,

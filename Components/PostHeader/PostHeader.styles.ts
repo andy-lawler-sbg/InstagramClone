@@ -11,9 +11,7 @@ export default StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginHorizontal: 10,
-    marginBottom: 10,
-    marginTop: 5,
+    margin: 10,
   },
   imageAndDetailsContainer: {
     flexDirection: 'row',
