@@ -12,7 +12,7 @@ import {useDispatch} from 'react-redux';
 import {addComment} from '../../features/posts/postsSlice';
 import Separator from '../Seperator/Separator';
 import AccountImage from '../AccountImage/AccountImage';
-import {useState} from 'react';
+import {useState, useCallback} from 'react';
 import styles from './ViewComments.styles';
 import {ViewCommentsProps} from './ViewComments.types';
 import {useHeaderHeight} from '@react-navigation/elements';
@@ -40,6 +40,12 @@ const ViewComments = ({postId, user, comments}: ViewCommentsProps) => {
   const [comment, onChangeText] = useState<string>('');
   const height = useHeaderHeight();
 
+  const keyExtractor = useCallback(item => item.id, []);
+  const renderItem = useCallback(
+    ({item}) => <CommentView comment={item} postId={postId} />,
+    [],
+  );
+
   return (
     <View style={styles.container}>
       <View>
@@ -62,14 +68,12 @@ const ViewComments = ({postId, user, comments}: ViewCommentsProps) => {
       </View>
       <Separator />
       <FlatList
-        contentContainerStyle={{
-          flex: 1,
-        }}
+        contentContainerStyle={{flex: 1}}
         vertical
         showsVerticalScrollIndicator={false}
         data={comments}
-        keyExtractor={item => item.id}
-        renderItem={({item}) => <CommentView comment={item} postId={postId} />}
+        keyExtractor={keyExtractor}
+        renderItem={renderItem}
       />
       <Separator />
       <KeyboardAvoidingView

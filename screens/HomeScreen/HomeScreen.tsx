@@ -6,6 +6,8 @@ import Header from '../../components/Header/Header';
 import Post from '../../components/Post/Post';
 import {PostProps} from '../../types/Post.types';
 import {useSelector} from 'react-redux';
+import styles from './HomeScreen.styles';
+import {useCallback} from 'react';
 
 const listHeaderComponent = () => (
   <>
@@ -16,25 +18,30 @@ const listHeaderComponent = () => (
 );
 
 const HomeScreen = () => {
-  const posts = useSelector(state => state.posts);
+  const posts = useSelector((state: {posts: any}) => state.posts);
   const insets = useSafeAreaInsets();
+
+  const renderItem = useCallback(({item}) => <Post {...item} />, []);
+  const keyExtractor = useCallback((item: {id: number}) => item.id, []);
 
   return (
     <View
-      style={{
-        flex: 1,
-        paddingTop: insets.top,
-        paddingLeft: insets.left,
-        paddingRight: insets.right,
-        backgroundColor: 'white',
-      }}>
+      style={[
+        styles.container,
+        {
+          flex: 1,
+          paddingTop: insets.top,
+          paddingLeft: insets.left,
+          paddingRight: insets.right,
+        },
+      ]}>
       <FlatList
+        containerContentStyle={styles.container}
         showsVerticalScrollIndicator={false}
         data={posts}
-        renderItem={({item}) => <Post {...item} />}
-        keyExtractor={(item: PostProps) => item.id}
+        renderItem={renderItem}
+        keyExtractor={keyExtractor}
         ListHeaderComponent={listHeaderComponent}
-        style={{backgroundColor: 'white'}}
       />
     </View>
   );

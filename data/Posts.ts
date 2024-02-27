@@ -2,6 +2,7 @@ import {PostProps} from '../types/Post.types';
 import {LoggedInUser} from './LoggedInUser';
 import {mockedUser} from './MockedUser';
 
+// The posts seen on the home screen of the app
 export const PostData: PostProps[] = [
   {
     id: 0,

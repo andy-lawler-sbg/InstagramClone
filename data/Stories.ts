@@ -2,6 +2,7 @@ import {StoryProps} from '../types/Story.types';
 import {mockedUser} from './MockedUser';
 import {LoggedInUser} from './LoggedInUser';
 
+// The stories seen at the top of the app
 export const StoriesData: StoryProps[] = [
   {
     id: 1,

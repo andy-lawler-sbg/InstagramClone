@@ -1,7 +1,8 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 import {PostData} from '../../data/Posts';
-import {CommentProps} from '../../types/Comment.types';
 import {PostProps} from '../../types/Post.types';
+import {AddCommentPayload} from './types/AddCommentPayload.types';
+import {LikeCommentPayload} from './types/LikeCommentPayload.types';
 
 const postsSlice = createSlice({
   name: 'posts',
@@ -63,13 +64,3 @@ const postsSlice = createSlice({
 export const {likePost, removeSuggestedPost, save, likeComment, addComment} =
   postsSlice.actions;
 export default postsSlice.reducer;
-
-type LikeCommentPayload = {
-  postId: number;
-  commentId: number;
-};
-
-type AddCommentPayload = {
-  postId: number;
-  comment: CommentProps;
-};

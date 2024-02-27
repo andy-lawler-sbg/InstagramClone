@@ -9,6 +9,8 @@ type MockUsers =
   | 'zuck'
   | 'lfc';
 
+// Enables mocked users with real usernames / profile icons etc to be returned with ease.
+// These users can then be used in other mocked data to ensure the data is simple.
 export function mockedUser(user: MockUsers): UserProps {
   switch (user) {
     case 'john':
