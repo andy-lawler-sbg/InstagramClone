@@ -1,8 +1,6 @@
 import {
   View,
   Text,
-  Pressable,
-  Image,
   TextInput,
   KeyboardAvoidingView,
   Platform,
@@ -10,16 +8,17 @@ import {
 } from 'react-native';
 import {useDispatch} from 'react-redux';
 import {addComment} from '../../features/posts/postsSlice';
-import Separator from '../Seperator/Separator';
-import AccountImage from '../AccountImage/AccountImage';
+import Separator from '../shared/Seperator/Separator';
+import ProfileImage from '../shared/ProfileImage/ProfileImage';
 import {useState, useCallback} from 'react';
-import styles from './ViewComments.styles';
-import {ViewCommentsProps} from './ViewComments.types';
+import styles from './Comments.styles';
+import {CommentsProps} from './Comments.types';
 import {useHeaderHeight} from '@react-navigation/elements';
 import {LoggedInUser} from '../../data/LoggedInUser';
 import CommentView from './Comment/CommentView';
+import IconButton from '../shared/IconButton/IconButton';
 
-const ViewComments = ({postId, user, comments}: ViewCommentsProps) => {
+const Comments = ({postId, user, comments}: CommentsProps) => {
   const didPressAddComment = () => {
     dispatch(
       addComment({
@@ -60,10 +59,13 @@ const ViewComments = ({postId, user, comments}: ViewCommentsProps) => {
       />
       <View>
         <Text style={styles.headerText}>Comments</Text>
-        <Pressable style={styles.sendButton}>
-          <Image
-            source={require('../../assets/send-variant-outline.png')}
-            style={[
+        <View style={styles.sendButton}>
+          <IconButton
+            action={() => console.log('share post comments')}
+            isEnabled
+            enabledColor="black"
+            enabledSource={require('../../assets/send-variant-outline.png')}
+            styles={[
               styles.reactionButton,
               {
                 transform: [
@@ -74,7 +76,7 @@ const ViewComments = ({postId, user, comments}: ViewCommentsProps) => {
               },
             ]}
           />
-        </Pressable>
+        </View>
       </View>
       <Separator />
       <FlatList
@@ -91,7 +93,7 @@ const ViewComments = ({postId, user, comments}: ViewCommentsProps) => {
         style={styles.keyboardAvoidingContainer}
         keyboardVerticalOffset={height + 70}>
         <View style={styles.addCommentBox}>
-          <AccountImage avatarUri={LoggedInUser.avatarUri} style={{}} />
+          <ProfileImage avatarUri={LoggedInUser.avatarUri} style={{}} />
           <TextInput
             value={comment}
             style={styles.addCommentInput}
@@ -107,4 +109,4 @@ const ViewComments = ({postId, user, comments}: ViewCommentsProps) => {
   );
 };
 
-export default ViewComments;
+export default Comments;

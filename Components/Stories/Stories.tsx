@@ -1,6 +1,6 @@
 import {FlatList} from 'react-native';
 import styles from './Stories.styles';
-import Story from '../InstagramStory/Story';
+import Story from './Story/Story';
 import {useCallback} from 'react';
 import {StoryProps} from '../../types/Story.types';
 import {useSelector} from 'react-redux';

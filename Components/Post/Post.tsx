@@ -1,6 +1,6 @@
-import PostHeader from '../PostHeader/PostHeader';
-import PostImage from '../PostImage/PostImage';
-import PostFooter from '../PostFooter/PostFooter';
+import PostHeader from './PostHeader/PostHeader';
+import PostImage from './PostImage/PostImage';
+import PostFooter from './PostFooter/PostFooter';
 import {PostProps} from '../../types/Post.types';
 
 const Post = ({

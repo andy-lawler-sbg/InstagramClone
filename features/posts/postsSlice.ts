@@ -1,6 +1,6 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 import {PostData} from '../../data/Posts';
-import {PostProps} from '../../types/Post.types';
+import {PostProps} from '../../../types/Post.types';
 import {AddCommentPayload} from './types/AddCommentPayload.types';
 import {LikeCommentPayload} from './types/LikeCommentPayload.types';
 

@@ -1,10 +1,11 @@
-import {View, Image, Text, Modal, Pressable} from 'react-native';
+import {View, Text, Modal, Pressable} from 'react-native';
 import styles from './Story.styles';
-import {StoryProps} from '../../types/Story.types';
-import {LoggedInUser} from '../../data/LoggedInUser';
+import {StoryProps} from '../../../types/Story.types';
+import {LoggedInUser} from '../../../data/LoggedInUser';
 import {useSelector} from 'react-redux';
-import ViewStory from '../InstagramStories/ViewStory/ViewStory';
+import ViewStory from '../ViewStory/ViewStory';
 import {useState, useCallback} from 'react';
+import ProfileImage from '../../shared/ProfileImage/ProfileImage';
 
 const Story = ({id, user, imageUri, timeSince, isLiked}: StoryProps) => {
   const stories = useSelector(state => state.stories);
@@ -36,27 +37,14 @@ const Story = ({id, user, imageUri, timeSince, isLiked}: StoryProps) => {
       </Modal>
       <Pressable onPress={() => shouldShowStory(true)} style={styles.button}>
         <View style={styles.container}>
-          <View>
-            <Image
-              style={[
-                styles.image,
-                (user != LoggedInUser || loggedInUserStories != 0) &&
-                  styles.colouredBorder,
-              ]}
-              source={{
-                uri: user.avatarUri,
-              }}
-            />
-            {user === LoggedInUser && loggedInUserStories === 0 && (
-              <>
-                <Image
-                  style={styles.plusCircle}
-                  source={require('../../assets/plus-circle.png')}
-                />
-                <View style={styles.plusCircleBackground} />
-              </>
-            )}
-          </View>
+          <ProfileImage
+            style={[
+              styles.image,
+              (user != LoggedInUser || loggedInUserStories != 0) &&
+                styles.colouredBorder,
+            ]}
+            avatarUri={user.avatarUri}
+          />
           <Text
             style={[styles.username, user === LoggedInUser && styles.greyText]}>
             {user.username}

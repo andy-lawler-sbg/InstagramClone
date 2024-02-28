@@ -1,6 +1,6 @@
 import {StyleProp} from 'react-native';
 
-export type AccountImageProps = {
+export type ProfileImageProps = {
   style: StyleProp;
   avatarUri: string;
 };

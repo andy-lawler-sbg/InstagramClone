@@ -1,20 +1,21 @@
 import {View, Text, Pressable, Image} from 'react-native';
-import AccountImage from '../../AccountImage/AccountImage';
-import AccountName from '../../AccountName/AccountName';
+import ProfileImage from '../../shared/ProfileImage/ProfileImage';
+import BoldAccountText from '../../shared/BoldAccountText/BoldAccountText';
 import {useDispatch} from 'react-redux';
 import {CommentViewProps} from './CommentView.types';
 import {likeComment} from '../../../features/posts/postsSlice';
 import styles from './CommentView.styles';
+import HeartReactButton from '../../shared/HeartReactButton/HeartReactButton';
 
 const CommentView = ({comment, postId}: CommentViewProps) => {
   const dispatch = useDispatch();
   return (
     <View style={styles.commentContainer}>
       <View style={styles.leftContainer}>
-        <AccountImage avatarUri={comment.user.avatarUri} style={{}} />
+        <ProfileImage avatarUri={comment.user.avatarUri} style={{}} />
         <View style={styles.userCommentContainer}>
           <View style={styles.userTimeSinceContainer}>
-            <AccountName username={comment.user.username} />
+            <BoldAccountText username={comment.user.username} />
             <Text style={styles.timeSinceText}>17s</Text>
           </View>
           <Text>{comment.comment}</Text>
@@ -22,19 +23,13 @@ const CommentView = ({comment, postId}: CommentViewProps) => {
         </View>
       </View>
       <View style={styles.likeCommentContainer}>
-        <Pressable
-          onPress={() =>
+        <HeartReactButton
+          action={() =>
             dispatch(likeComment({postId: postId, commentId: comment.id}))
-          }>
-          <Image
-            source={
-              comment.isLiked
-                ? require('../../../assets/heart.png')
-                : require('../../../assets/heart-outline.png')
-            }
-            style={styles.likeCommentButton}
-          />
-        </Pressable>
+          }
+          isEnabled={comment.isLiked}
+          styles={styles.likeCommentButton}
+        />
         {comment.likes > 0 && <Text>{comment.likes}</Text>}
       </View>
     </View>

@@ -8,14 +8,16 @@ import {
   Platform,
 } from 'react-native';
 import styles from './ViewStory.styles';
-import AccountImage from '../../AccountImage/AccountImage';
-import AccountName from '../../AccountName/AccountName';
+import ProfileImage from '../../shared/ProfileImage/ProfileImage';
+import BoldAccountText from '../../shared/BoldAccountText/BoldAccountText';
 import {useState, useEffect} from 'react';
 import {useHeaderHeight} from '@react-navigation/elements';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {ViewStoryProps} from './ViewStory.types';
 import {useDispatch} from 'react-redux';
 import {likeStory} from '../../../features/stories/storiesSlice';
+import IconButton from '../../shared/IconButton/IconButton';
+import HeartReactButton from '../../shared/HeartReactButton/HeartReactButton';
 
 const ViewStory = ({shouldCloseStory, story}: ViewStoryProps) => {
   const [comment, onChangeText] = useState<string>('');
@@ -39,27 +41,25 @@ const ViewStory = ({shouldCloseStory, story}: ViewStoryProps) => {
       }}>
       <View style={styles.commentContainer}>
         <View style={styles.leftContainer}>
-          <AccountImage avatarUri={story.user.avatarUri} style={{}} />
+          <ProfileImage avatarUri={story.user.avatarUri} style={{}} />
           <View style={styles.userCommentContainer}>
             <View style={styles.userTimeSinceContainer}>
-              <AccountName username={story.user.username} />
+              <BoldAccountText username={story.user.username} />
               <Text style={styles.timeSinceText}>{story.timeSince}</Text>
             </View>
           </View>
         </View>
         <View style={styles.buttonContainer}>
-          <Pressable>
-            <Image
-              source={require('../../../assets/dots-horizontal.png')}
-              style={styles.button}
-            />
-          </Pressable>
-          <Pressable onPress={shouldCloseStory}>
-            <Image
-              source={require('../../../assets/close.png')}
-              style={styles.button}
-            />
-          </Pressable>
+          <IconButton
+            action={() => console.log('View edit story')}
+            styles={styles.button}
+            disabledSource={require('../../../assets/dots-horizontal.png')}
+          />
+          <IconButton
+            action={shouldCloseStory}
+            styles={styles.button}
+            disabledSource={require('../../../assets/close.png')}
+          />
         </View>
       </View>
       <Image
@@ -81,25 +81,16 @@ const ViewStory = ({shouldCloseStory, story}: ViewStoryProps) => {
             keyboardType="default"
             returnKeyType="send"
           />
-          <Pressable onPress={() => dispatch(likeStory(story.id))}>
-            <Image
-              source={
-                story.isLiked
-                  ? require('../../../assets/heart.png')
-                  : require('../../../assets/heart-outline.png')
-              }
-              style={[
-                styles.button,
-                {tintColor: story.isLiked ? 'red' : 'black'},
-              ]}
-            />
-          </Pressable>
-          <Pressable>
-            <Image
-              source={require('../../../assets/send-variant-outline.png')}
-              style={styles.button}
-            />
-          </Pressable>
+          <HeartReactButton
+            action={() => dispatch(likeStory(story.id))}
+            isEnabled={story.isLiked}
+            styles={styles.button}
+          />
+          <IconButton
+            action={shouldCloseStory}
+            styles={styles.button}
+            disabledSource={require('../../../assets/send-variant-outline.png')}
+          />
         </View>
       </KeyboardAvoidingView>
     </View>

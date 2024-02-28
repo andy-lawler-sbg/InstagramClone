@@ -1,5 +1,5 @@
-import {UserProps} from '../../types/User.types';
-import {CommentProps} from '../../types/Comment.types';
+import {UserProps} from '../../../types/User.types';
+import {CommentProps} from '../../../types/Comment.types';
 
 export type PostFooterProps = {
   id: number;

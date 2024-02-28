@@ -50,7 +50,7 @@ export default StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
   },
-  accountImage: {
+  profileImage: {
     height: 20,
     width: 20,
     borderRadius: 10,

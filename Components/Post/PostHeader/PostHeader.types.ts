@@ -1,4 +1,4 @@
-import {UserProps} from '../../types/User.types';
+import {UserProps} from '../../../types/User.types';
 
 export type PostHeaderProps = {
   id: number;
