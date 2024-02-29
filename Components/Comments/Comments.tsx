@@ -13,7 +13,7 @@ import ProfileImage from '../shared/ProfileImage/ProfileImage';
 import {useState, useCallback} from 'react';
 import styles from './Comments.styles';
 import {CommentsProps} from './Comments.types';
-import {useHeaderHeight} from '@react-navigation/elements';
+
 import {LoggedInUser} from '../../data/LoggedInUser';
 import CommentView from './Comment/CommentView';
 import IconButton from '../shared/IconButton/IconButton';
@@ -37,7 +37,6 @@ const Comments = ({postId, user, comments}: CommentsProps) => {
 
   const dispatch = useDispatch();
   const [comment, onChangeText] = useState<string>('');
-  const height = useHeaderHeight();
 
   const keyExtractor = useCallback(item => item.id, []);
   const renderItem = useCallback(
@@ -91,7 +90,7 @@ const Comments = ({postId, user, comments}: CommentsProps) => {
       <KeyboardAvoidingView
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
         style={styles.keyboardAvoidingContainer}
-        keyboardVerticalOffset={height + 70}>
+        keyboardVerticalOffset={70}>
         <View style={styles.addCommentBox}>
           <ProfileImage avatarUri={LoggedInUser.avatarUri} style={{}} />
           <TextInput
