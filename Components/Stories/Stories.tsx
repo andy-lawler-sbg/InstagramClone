@@ -1,4 +1,4 @@
-import {FlatList} from 'react-native';
+import {FlashList} from '@shopify/flash-list';
 import styles from './Stories.styles';
 import Story from './Story/Story';
 import {useCallback} from 'react';
@@ -11,13 +11,14 @@ const Stories = () => {
   const renderItem = useCallback(({item}) => <Story {...item} />, []);
 
   return (
-    <FlatList
+    <FlashList
       style={styles.container}
       horizontal
       showsHorizontalScrollIndicator={false}
       data={stories}
       renderItem={renderItem}
       keyExtractor={keyExtractor}
+      estimatedItemSize={50}
     />
   );
 };

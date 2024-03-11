@@ -1,10 +1,11 @@
-import {View, FlatList} from 'react-native';
+import {View} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import Post from '../../components/Post/Post';
 import {useSelector} from 'react-redux';
 import styles from './HomeScreen.styles';
 import {useCallback} from 'react';
 import HomeHeader from '../../components/HomeHeader/HomeHeader';
+import {FlashList} from '@shopify/flash-list';
 
 const HomeScreen = () => {
   const posts = useSelector((state: {posts: any}) => state.posts);
@@ -23,13 +24,14 @@ const HomeScreen = () => {
           paddingRight: insets.right,
         },
       ]}>
-      <FlatList
+      <FlashList
         containerContentStyle={styles.container}
         showsVerticalScrollIndicator={false}
         data={posts}
         renderItem={renderItem}
         keyExtractor={keyExtractor}
         ListHeaderComponent={HomeHeader}
+        estimatedItemSize={200}
       />
     </View>
   );

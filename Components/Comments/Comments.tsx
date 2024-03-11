@@ -4,8 +4,8 @@ import {
   TextInput,
   KeyboardAvoidingView,
   Platform,
-  FlatList,
 } from 'react-native';
+import {FlashList} from '@shopify/flash-list';
 import {useDispatch} from 'react-redux';
 import {addComment} from '../../features/posts/postsSlice';
 import Separator from '../shared/Seperator/Separator';
@@ -78,7 +78,8 @@ const Comments = ({postId, user, comments}: CommentsProps) => {
         </View>
       </View>
       <Separator />
-      <FlatList
+      <FlashList
+        estimatedItemSize={40}
         contentContainerStyle={{flex: 1}}
         vertical
         showsVerticalScrollIndicator={false}
