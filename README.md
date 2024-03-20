@@ -1,6 +1,6 @@
 # Instagram Clone
 
-Instagram Clone app built using React Native. This app was built to learn and explore more about React Native. The app uses React/React Native/Typescript and also Redux to manage state.
+Instagram Clone app built using React Native. This app was built to learn and explore more about React Native. The app uses React + React Native/Typescript and also Redux to manage state.
 
 # Getting started
 
